@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // bg:写一个求和函数，不管用户传入几个实参，都把和求出来
+        // getsum(2,3)
+        // getsum(1,2,3)
+        // 动态参数
+        // argument
+        function getsum(){
+            //argument 动态参数只存在于函数中
+            console.log(arguments)
+            let sum = 0
+            for(let i=0;i<arguments.length;i++){
+                sum += arguments[i]
+            }
+            console.log('sum=',sum)
+        }
+        getsum(2,5,8)
+        // 剩余参数也能做
+        function sum(a,b,...arr){
+            // 例如上面这种就是先得到a，b，剩下的给arr
+            // 不同于argument，剩余参数得到的是 剩下的 真数组，argument是伪数组
+            console.log(arr)
+            let sum = 0
+            for(let i=0;i<arr.length;i++){
+                sum += arr[i]
+            }
+            console.log('sum=',sum)
+        }
+        sum(1,2,3,4)
+        // 区分与展开运算符...,可以展开数组
+        const arr = [1,2,3,4,5]
+       
+        console.log(...arr)
+        // 典型应用求数组最大值（最小值）、合并数组因为数组没有自己的方法，但是MATH.max有
+        console.log(Math.max(...arr))
+        // 合并数组
+        const arr1 = [2,3,4,5,6]
+        const arr2 = [...arr,...arr1]
+        console.log(arr2)
+    </script>
+</body>
+</html>

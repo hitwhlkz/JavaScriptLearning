@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包，简单来说就是内层函数加外层函数变量一起构成的作用域
+        // 一个最典型的闭包例子
+        // function outer(){
+        //     const a =10
+        //     function fn(){
+        //         console.log(a)
+        //     }
+        //     fn()
+        // }
+        // outer()
+        // 通常的写法，因为闭包通常作用是在外部可以访问函数内部的变量值
+        // function outer1(){
+        //     let a = 10
+        //     function iner(){
+        //         console.log(a)
+        //     }
+        //     // 为了外部使用a
+        //     return iner
+        // }
+        // const fn = outer1()
+        // fn()
+        // 闭包应用
+        // 实现数据的私有
+        // eg:统计函数调用次数
+        // 首先传统写法：
+        let i = 0;
+        function counter(){
+            i++
+            console.log(`函数调用了${i}次`)
+        }
+        // 这样操作由于i是全局变量，可以被其他篡改，所以应该用闭包方法
+        function count(){
+            let i = 0
+            function fn(){
+                i++
+                console.log(i)
+            }
+            return fn
+        }
+        const fnc = count()
+        //这里由于fnc是全局变量，从他出发能找到fn(),fn()又用到了i，所以局部变量i没有被销毁
+    </script> 
+</body>
+</html>

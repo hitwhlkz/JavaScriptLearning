@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //变量声明
+        let name = '李昆泽'
+        let age = 23
+        console.log(name,age)
+        //let const不允许多次声明，var允许多次声明
+        let num = 18
+        let num1 = 19
+        var int = 1
+        var int = 2
+        const i = 1
+        const i1 = 2
+        //声明多个变量 不推荐
+        let uage=10,uname = '李昆泽'
+        //输入用户名案例
+        let userName = prompt('请输入用户姓名')
+        document.write(userName)
+        //交换变量值
+        let num2 = 10
+        let num3 = 20
+        let temp
+        temp = num2
+        num2 = num3
+        num3 = temp 
+        console.log(num2,num3)
+        //练习案例
+        let uname2 = prompt('请输入您的名字')
+        let age1 = prompt('请输入您的年龄')
+        let gender = prompt('请输入您的性别')
+        document.write(uname2,age1,gender)
+    </script>
+</body>
+</html>

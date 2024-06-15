@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //作用域链本质是一个变量查找机制
+        //在函数执行前会优先查找当前函数作用域中查找变量
+        //如果当前作用域查找不到会依次查找父级作用域直到全局作用域
+        let a = 1
+        let b = 2
+        function f(){
+            let a = 3
+            function g(){
+                //a =2
+                console.log(a)
+            }
+            g()
+        }
+        f()
+        // 总结:
+        // 1. 嵌套关系的作用域串联起来形成了作用域链
+        // 2. 相同作用域链中按着从小到大的规则查找变量
+        // 3. 子作用域能够访问父作用域,父级作用域无法访问子级作用域
+    </script>
+</body>
+</html>

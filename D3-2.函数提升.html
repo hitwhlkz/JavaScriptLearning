@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数提升：与变量提升类似，指函数在声明前就能被调用
+        fn()
+        function fn(){
+            console.log(dafef)
+        }
+        // 执行时会把所有函数声明提升到当前作用域最前面
+        // 但是下面这种不行函数表达式
+        fn1()
+        var fn1 = function (){
+            console.log(dbsaifbhaj)
+        }
+        // 因为var提升只提升变量声明而不赋值，所以fn1只是一个变量而不是函数
+    </script>
+</body>
+</html>

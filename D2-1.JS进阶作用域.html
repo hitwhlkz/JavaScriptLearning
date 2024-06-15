@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数内部是函数作用域，变量在函数内部有效，函数外部访问无效，函数运行完会销毁
+        //块级作用域声明的变量 有可能 不会被访问-----var声明的会因为var没有块级作用域
+        for(var i=0; i<3;i++){
+            console.log(i)
+        }
+        console.log(i)
+        //let和const声明的有块级作用域
+    </script>
+    <script>
+        //<script>标签和.js文件的最外层是全局作用域，在此声明的变量在函数内部也可以被访问
+        const num = 10
+        function fn(){
+            console.log('全局变量num可以被访问:',num)
+            age = 10//函数内部未声明的变量也是全局变量，不推荐这么用
+        } 
+        fn()   
+        console.log('函数内部未声明的变量也是全局变量',age)
+    </script>
+</body>
+</html>
