@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 目标:能够熟悉箭头函数不同写法
+        // 目的:引入箭头函数的目的是更简短的函数写法并且不绑定this,箭头函数的语法比函数表达式更简洁 
+        // 使用场景:箭头函数更适用于那些本来需要 匿名函数 的地方
+        // 学习路径:
+        // 1. 基本语法
+        // 2. 箭头函数参数
+        // 3. 箭头函数this
+
+        // 只有一个形参时可以省略小括号
+        // const fn = x =>{
+        //     console.log(x)
+        // }
+        // fn(2)
+        // 只有一行代码时可以省略大括号,还可以省略retun
+        // const fn = x => x+x
+        // console.log(fn(2))
+        // 箭头函数可以直接返回一个对象,记得要加括号
+        const fn = uname => ({uname:uname})
+        
+        console.log(fn('李昆泽'))
+    </script>
+</body>
+</html>
