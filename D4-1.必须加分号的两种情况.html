@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.立即执行函数必须加分号
+        (function(){ })();
+        // 2.使用数组时必须加分号
+        const arr = [1,2,3]
+        const str = 'lkz'
+        // 用map遍历数组
+        arr.map(function (item){
+            console.log(item)
+        })
+        // 这样没问题
+        // 但是直接用中括号就不行,需要在前面加分号
+        ;[1,2,3].map(function(item){
+            console.log(item)
+        })
+        // 1. 变量多,单元值少, undefined
+        // const [a, b, c, d] = [1, 2, 3] 
+        // console.Log(a) // 1 
+        // console. Log(b) // 2 
+        // console.Log(c) // 3 
+        // console. Log(d) // undefined 
+        // 2. 变量少, 单元值多 
+        // const [a, b] = [1, 2, 3] 
+        // console.Log(a) // 1 
+        // console. Log(b) // 2 
+        // 3. 剩余参数 变量少, 单元值多 
+        // const [a, b,...c] = [1, 2, 3, 4, 5, 6] 
+        // console.log(a) // 1 
+        // console.log(b) // 2
+        // console.log(c)// [4,5,6]
+        // 4. 防止 undefined 传递 
+        // const [a = 0, b = 0] = [1, 2] 
+        // const [a = 0, b = 0] = [] 
+        // console.Log(a) // 1 
+        // console. log(b) // 2 
+        // 5. 按需导入赋值 
+        // const [a, b, , d] = [1, 2, 3, 4] 
+        // console.log(a) // 1 
+        // console.log(b) // 2 
+        // console.log(d) // 4 
+        // 6.多维数组解构
+        const [a,b,[c,d]] = [1,2,[3,4]]
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+    </script>
+</body>
+</html>

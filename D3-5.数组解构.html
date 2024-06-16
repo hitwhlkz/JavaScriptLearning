@@ -7,7 +7,19 @@
 </head>
 <body>
     <script>
-        
+        // eg：现在来了个数组
+        const arr = [100,60,80]
+        // 数组解构 相当于批量赋值
+        const [max,min,avg] = arr
+        // 这种写法类似于
+        // const max = arr[0]
+        // const min = arr[1]
+        // const avg = arr[2]
+        // 交换两数
+        let a = 1
+        let b = 3;// 这里的分号必须加
+        [b,a] = [a,b]
+        console.log([a,b])
     </script>
 </body>
-</html>
+</html>  
