@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const obj = {
+            uname:'lkz',
+            age:18  
+         }
+        // 结构的语法 要求变量名字与对象属性名必须一样
+        const {uname,age} = { uname:'lkz',age:18}
+        // 等价于const uname = obj.uname
+        
+        // 1.对象解构变量更名 旧变量名:新变量名
+        const {uname:username,age:aged} = {uname:'lkz',age:18}
+        console.log(username)
+
+        // 2.解构数组对象
+        const pig = [
+            {
+                uname:'佩奇',
+                age:18
+            }
+        ]
+        const [{uname:pigname,age:pigage}] = pig
+        console.log(pigname)
+        // 3.多级对象解构
+        const dog ={
+            name:'lkz',
+            family:{
+                mother:'dsa',
+                father:'dada',
+                sister:'fafd'
+            },
+            age:18
+        }
+        const {name,family:{mother,father,sister},age:agee} = dog
+    </script>
+</body>
+</html>
