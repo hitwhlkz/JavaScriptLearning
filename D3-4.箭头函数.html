@@ -27,6 +27,58 @@
         const fn = uname => ({uname:uname})
         
         console.log(fn('李昆泽'))
+        // 写一个求和
+        const fn1 = (...arr) =>{
+            let sum = 0
+            for(let i=0;i<arr.length;i++){
+                sum += arr[i]
+            }
+            return sum
+        }
+        console.log(fn1(1,2,3,4,5))
+        // 箭头函数this指向问题 谁调用这个函数，this就指向谁
+        // window
+        console.log(this) 
+        // window
+        // 普通函数
+        function fnc(){
+            console.log(this)
+        }
+        // 对象方法里的this 指向obj
+        const obj = {
+            name:'andy',
+            sayHi:function(){
+                console.log(this)
+            }
+        }
+        obj.sayHi()
+        // 箭头函数不会创建自己的this，只会从自己的作用域链的上一层沿用this
+        // 这里是指funct函数里的局部作用域没有this，于是找他的上层作用域，就是全局的this
+        const fnct = () =>{
+            console.log(this)
+        }
+        fnct()
+        // 对象方法箭头函数this指向
+        // 这里sayhi没有this，找上一层作用域的this，obj的this指向window，所以是window
+        const obj1 = {
+            name:'lkz',
+            sayHi:() =>{
+                console.log(this)
+            }
+        }
+        obj1.sayHi()
+
+        const obj2 = { 
+            uname: 'pink老师', 
+            sayHi: function () { 
+                    let i = 10 
+                    const count = () => { 
+                    console. log(this) // obj
+                } 
+                    count ()
+            }
+        }
+        obj. sayHi ()
     </script>
 </body>
 </html>
